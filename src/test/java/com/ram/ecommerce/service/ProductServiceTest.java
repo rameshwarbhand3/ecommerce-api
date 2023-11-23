@@ -1,11 +1,11 @@
-package com.ram.productApp.service;
+package com.ram.ecommerce.service;
 
-import com.ram.productApp.dto.CreateProductResponse;
-import com.ram.productApp.dto.ProductRequest;
-import com.ram.productApp.dto.ProductResponse;
-import com.ram.productApp.entity.Product;
-import com.ram.productApp.exception.ProductNotAvailableException;
-import com.ram.productApp.repository.ProductRepository;
+import com.ram.ecommerce.dto.CreateProductResponse;
+import com.ram.ecommerce.dto.ProductRequest;
+import com.ram.ecommerce.dto.ProductResponse;
+import com.ram.ecommerce.entity.Product;
+import com.ram.ecommerce.exception.ProductNotAvailableException;
+import com.ram.ecommerce.repository.ProductRepository;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -133,8 +133,9 @@ class ProductServiceTest {
         verify(productRepository, times(1)).deleteById(productId);
 
     }
+
     @Test
-    public void shouldThrowExceptionWhileDeletingProductWhenProductNotExist(){
+    public void shouldThrowExceptionWhileDeletingProductWhenProductNotExist() {
         //given
         Long productId = null;
         when(productRepository.findById(productId)).thenReturn(Optional.empty());
@@ -172,7 +173,7 @@ class ProductServiceTest {
     }
 
     @Test
-    public void shouldThrowExceptionWhileUpdatingProductWhenRequiredProductNotFound(){
+    public void shouldThrowExceptionWhileUpdatingProductWhenRequiredProductNotFound() {
         //given
         Long productId = 1L;
         when(productRepository.findById(productId)).thenReturn(Optional.empty());
@@ -184,7 +185,7 @@ class ProductServiceTest {
                 .quantity(2)
                 .description("Redmi Mobile")
                 .build();
-        ProductNotAvailableException productNotAvailableException = assertThrows(ProductNotAvailableException.class, () -> productService.updateProduct(productId,productRequest));
+        ProductNotAvailableException productNotAvailableException = assertThrows(ProductNotAvailableException.class, () -> productService.updateProduct(productId, productRequest));
 
         //then
         assertEquals("Product Not Available with given id " + productId, productNotAvailableException.getMessage());

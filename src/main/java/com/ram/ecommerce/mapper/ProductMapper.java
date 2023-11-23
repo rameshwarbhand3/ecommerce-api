@@ -1,11 +1,11 @@
-package com.ram.productApp.mapper;
+package com.ram.ecommerce.mapper;
 
-import com.ram.productApp.dto.ProductRequest;
-import com.ram.productApp.dto.ProductResponse;
-import com.ram.productApp.entity.Product;
+import com.ram.ecommerce.dto.ProductRequest;
+import com.ram.ecommerce.dto.ProductResponse;
+import com.ram.ecommerce.entity.Product;
 
 public class ProductMapper {
-    public static ProductResponse mapToProductDto(Product product){
+    public static ProductResponse mapToProductDto(Product product) {
         return ProductResponse.builder()
                 .id(product.getId())
                 .name(product.getName())
@@ -15,8 +15,8 @@ public class ProductMapper {
                 .build();
     }
 
-    public static Product mapToProduct(ProductRequest productRequest){
-        Product product  = new Product();
+    public static Product mapToProduct(ProductRequest productRequest) {
+        Product product = new Product();
         product.setName(productRequest.getName());
         product.setPrice(productRequest.getPrice());
         product.setQuantity(productRequest.getQuantity());

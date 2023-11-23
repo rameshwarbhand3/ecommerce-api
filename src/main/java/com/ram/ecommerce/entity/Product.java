@@ -1,4 +1,4 @@
-package com.ram.productApp.entity;
+package com.ram.ecommerce.entity;
 
 import jakarta.persistence.*;
 import lombok.*;

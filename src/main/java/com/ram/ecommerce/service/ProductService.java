@@ -1,12 +1,12 @@
-package com.ram.productApp.service;
+package com.ram.ecommerce.service;
 
-import com.ram.productApp.dto.ProductRequest;
-import com.ram.productApp.dto.CreateProductResponse;
-import com.ram.productApp.dto.ProductResponse;
-import com.ram.productApp.exception.ProductNotAvailableException;
-import com.ram.productApp.mapper.ProductMapper;
-import com.ram.productApp.entity.Product;
-import com.ram.productApp.repository.ProductRepository;
+import com.ram.ecommerce.dto.CreateProductResponse;
+import com.ram.ecommerce.dto.ProductRequest;
+import com.ram.ecommerce.dto.ProductResponse;
+import com.ram.ecommerce.entity.Product;
+import com.ram.ecommerce.exception.ProductNotAvailableException;
+import com.ram.ecommerce.mapper.ProductMapper;
+import com.ram.ecommerce.repository.ProductRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -31,7 +31,7 @@ public class ProductService {
 
     public List<ProductResponse> getAllProducts() {
         List<Product> productsList = productRepository.findAll();
-        if(productsList.isEmpty()){
+        if (productsList.isEmpty()) {
             throw new ProductNotAvailableException("Products Not Available");
         }
 
@@ -59,8 +59,8 @@ public class ProductService {
     }
 
     public void deleteProduct(Long productId) {
-      productRepository.findById(productId)
-               .orElseThrow(() -> new ProductNotAvailableException("Product Not Available with given id " + productId));
+        productRepository.findById(productId)
+                .orElseThrow(() -> new ProductNotAvailableException("Product Not Available with given id " + productId));
         productRepository.deleteById(productId);
     }
 }

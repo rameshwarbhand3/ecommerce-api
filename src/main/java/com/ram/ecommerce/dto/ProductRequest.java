@@ -1,6 +1,8 @@
-package com.ram.productApp.dto;
+package com.ram.ecommerce.dto;
 
-import lombok.*;
+import lombok.Builder;
+import lombok.Getter;
+import lombok.Setter;
 
 @Getter
 @Setter

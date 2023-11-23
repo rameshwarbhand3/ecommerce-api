@@ -1,11 +1,11 @@
-package com.ram.productApp.exceptionhandler;
+package com.ram.ecommerce.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
 
 @AllArgsConstructor
 @NoArgsConstructor
-public class Error {
+public class ErrorResponse {
     private String error;
     private String message;
 }

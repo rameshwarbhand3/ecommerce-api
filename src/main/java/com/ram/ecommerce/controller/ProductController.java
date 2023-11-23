@@ -1,9 +1,9 @@
-package com.ram.productApp.controller;
+package com.ram.ecommerce.controller;
 
-import com.ram.productApp.dto.CreateProductResponse;
-import com.ram.productApp.dto.ProductRequest;
-import com.ram.productApp.dto.ProductResponse;
-import com.ram.productApp.service.ProductService;
+import com.ram.ecommerce.dto.CreateProductResponse;
+import com.ram.ecommerce.dto.ProductRequest;
+import com.ram.ecommerce.dto.ProductResponse;
+import com.ram.ecommerce.service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
